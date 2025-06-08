@@ -16,11 +16,12 @@
       </div>
       <nav class="nav-container">
         <ul class="nav-links">
+          <li><a href="#" class="nav-btn" id="btn-home">HOME</a></li>
           <li><a href="#entradas" class="nav-btn">ENTRADAS</a></li>
           <li><a href="#lineup" class="nav-btn">LINE UP</a></li>
-          <li><a href="#cartel" class="nav-btn" id="btn-cartel">CARTEL</a></li>
+          <li><a href="#" class="nav-btn" id="btn-cartel">CARTEL</a></li>
           <li><a href="#info" class="nav-btn">INFO</a></li>
-          <li><a href="#beatland" class="nav-btn" id="btn-beatland">BEATLAND</a></li>
+          <li><a href="#" class="nav-btn" id="btn-beatland">BEATLAND</a></li>
         </ul>
       </nav>
     </div>
@@ -60,16 +61,16 @@
 
     <section id="beatland"></section>
   </main>
-
+  
   <!-- SECCIÓN CARTEL -->
   <section id="cartel-section" style="display: none; text-align: center; padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
-    <h2>Cartel del Evento</h2>
-    <img src="assets/cartel.png" alt="Cartel del Evento" style="max-width: 100%; height: auto; border-radius: 12px;" />
-    <button id="volver-cartel" class="volver-btn" style="margin-top: 20px; padding: 10px 20px; cursor: pointer; border-radius: 6px; border: none; background-color: #f90; color: white; font-weight: bold;">Volver</button>
+    <img src="assets/cartel.png" alt="Cartel del Evento" style="max-width: 50%; height: auto; border-radius: 12px;" />
+    <br /><br />
+    <button id="volver-cartel" class="volver-btn" style="padding: 12px 24px; background-color: #f90; color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer;">Volver</button>
   </section>
 
   <!-- SECCIÓN BEATLAND / MERCH -->
-  <section id="beatland-section" class="beatland-section" style="display: none;">
+  <section id="beatland-section" class="beatland-section" style="display: none; padding: 40px 20px; max-width: 1200px; margin: 0 auto; text-align: center;">
     <h2>Merch Oficial</h2>
     <div class="merch-grid">
       <div class="merch-item merch-item-1">
@@ -90,7 +91,6 @@
 
   <!-- SCRIPT CONTADOR Y NAVEGACIÓN -->
   <script>
-    // Contador
     const targetDate = new Date("June 27, 2025 00:00:00").getTime();
 
     const countdown = () => {
@@ -116,36 +116,48 @@
     countdown();
     setInterval(countdown, 1000);
 
-    // Navegación secciones
+    function ocultarSecciones() {
+      document.getElementById("contenido-principal").style.display = "none";
+      document.getElementById("cartel-section").style.display = "none";
+      document.getElementById("beatland-section").style.display = "none";
+    }
 
-    // Mostrar cartel
+    window.onload = () => {
+      ocultarSecciones();
+      document.getElementById("contenido-principal").style.display = "block";
+    };
+
+    document.getElementById("btn-home").addEventListener("click", function(e) {
+      e.preventDefault();
+      ocultarSecciones();
+      document.getElementById("contenido-principal").style.display = "block";
+      window.scrollTo(0,0);
+    });
+
     document.getElementById("btn-cartel").addEventListener("click", function(e) {
       e.preventDefault();
-      document.getElementById("contenido-principal").style.display = "none";
-      document.getElementById("beatland-section").style.display = "none";
+      ocultarSecciones();
       document.getElementById("cartel-section").style.display = "block";
       window.scrollTo(0, 0);
     });
 
-    // Volver desde cartel
     document.getElementById("volver-cartel").addEventListener("click", function () {
-      document.getElementById("cartel-section").style.display = "none";
+      ocultarSecciones();
       document.getElementById("contenido-principal").style.display = "block";
+      window.scrollTo(0, 0);
     });
 
-    // Mostrar merch
     document.getElementById("btn-beatland").addEventListener("click", function(e) {
       e.preventDefault();
-      document.getElementById("contenido-principal").style.display = "none";
-      document.getElementById("cartel-section").style.display = "none";
+      ocultarSecciones();
       document.getElementById("beatland-section").style.display = "block";
       window.scrollTo(0, 0);
     });
 
-    // Volver desde beatland
     document.getElementById("volver-beatland").addEventListener("click", function () {
-      document.getElementById("beatland-section").style.display = "none";
+      ocultarSecciones();
       document.getElementById("contenido-principal").style.display = "block";
+      window.scrollTo(0, 0);
     });
   </script>
 </body>
