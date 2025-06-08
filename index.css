@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('assets/fondo3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header {
+  background-color: #FFE99A;
+  padding: 20px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;        
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-container {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.nav-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px; 
+  list-style: none;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #f90;
+  color: white;
+  border-color: #f90;
+}
+
+.countdown-section {
+  text-align: center;
+  padding: 40px 20px;
+  color: #111;
+  max-width: 1200px;
+  margin: 40px auto;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  color: #111;
+}
+
+.time-block span {
+  font-size: 60px;
+}
+
+.time-block p {
+  margin-top: 8px;
+  font-size: 16px;
+  text-transform: none;
+  color: #111;
+}
+
+.separator {
+  font-size: 60px;
+  color: #111;
+  padding-bottom: 20px;
+  user-select: none;
+}
+
+.imagen-central {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.imagen-central img {
+  width: 500px;
+  max-width: 90%;
+  height: auto;
+}
+
+.cartel-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fffbe6;
+  color: #111;
+}
+
+.cartel-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.cartel-imagen img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.volver-btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #f90;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.volver-btn:hover {
+  background-color: #e57d00;
+}
+
+.beatland-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fffbe6;
+  color: #111;
+}
+
+.beatland-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.merch-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start; 
+}
+
+.merch-item {
+  width: 320px;           
+  height: 460px;        
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.merch-item img {
+  width: 100%;      
+  height: auto;
+  max-height: 370px; 
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.comprar-btn {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #f90;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comprar-btn:hover {
+  background-color: #e68000;
+}
+
+.merch-item-1 {
+  width: 380px;  
+  height: 460px; 
+}
+
+.merch-item-1 img {
+  max-height: 400px; 
+}
