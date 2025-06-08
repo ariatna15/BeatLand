@@ -1,1 +1,152 @@
-<hi1>BeatLand page</hi1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeatLand</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="assets/BeatLandLogo.png" alt="Logo BeatLand" class="logo" />
+      </div>
+      <nav class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#entradas" class="nav-btn">ENTRADAS</a></li>
+          <li><a href="#lineup" class="nav-btn">LINE UP</a></li>
+          <li><a href="#cartel" class="nav-btn" id="btn-cartel">CARTEL</a></li>
+          <li><a href="#info" class="nav-btn">INFO</a></li>
+          <li><a href="#beatland" class="nav-btn" id="btn-beatland">BEATLAND</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido-principal">
+    <!-- IMAGEN CENTRAL -->
+    <div class="imagen-central">
+      <img src="assets/imagen-central.png" alt="Imagen central" />
+    </div>
+
+    <!-- CONTADOR -->
+    <section class="countdown-section" id="countdown-section">
+      <div id="countdown">
+        <div class="time-block">
+          <span id="days">00</span>
+          <p>Días</p>
+        </div>
+        <div class="separator">:</div>
+        <div class="time-block">
+          <span id="hours">00</span>
+          <p>Horas</p>
+        </div>
+        <div class="separator">:</div>
+        <div class="time-block">
+          <span id="minutes">00</span>
+          <p>Minutos</p>
+        </div>
+        <div class="separator">:</div>
+        <div class="time-block">
+          <span id="seconds">00</span>
+          <p>Segundos</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="beatland"></section>
+  </main>
+
+  <!-- SECCIÓN CARTEL -->
+  <section id="cartel-section" style="display: none; text-align: center; padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
+    <h2>Cartel del Evento</h2>
+    <img src="assets/cartel.png" alt="Cartel del Evento" style="max-width: 100%; height: auto; border-radius: 12px;" />
+    <button id="volver-cartel" class="volver-btn" style="margin-top: 20px; padding: 10px 20px; cursor: pointer; border-radius: 6px; border: none; background-color: #f90; color: white; font-weight: bold;">Volver</button>
+  </section>
+
+  <!-- SECCIÓN BEATLAND / MERCH -->
+  <section id="beatland-section" class="beatland-section" style="display: none;">
+    <h2>Merch Oficial</h2>
+    <div class="merch-grid">
+      <div class="merch-item merch-item-1">
+        <img src="assets/merch1.jpeg" alt="Merch 1" />
+        <button class="comprar-btn">COMPRAR</button>
+      </div>
+      <div class="merch-item">
+        <img src="assets/merch2.jpeg" alt="Merch 2" />
+        <button class="comprar-btn">COMPRAR</button>
+      </div>
+      <div class="merch-item">
+        <img src="assets/merch3.jpeg" alt="Merch 3" />
+        <button class="comprar-btn">COMPRAR</button>
+      </div>
+    </div>
+    <button id="volver-beatland" class="volver-btn">Volver</button>
+  </section>
+
+  <!-- SCRIPT CONTADOR Y NAVEGACIÓN -->
+  <script>
+    // Contador
+    const targetDate = new Date("June 27, 2025 00:00:00").getTime();
+
+    const countdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "<p>¡El evento ha comenzado!</p>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = String(days).padStart(2, '0');
+      document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+    };
+
+    countdown();
+    setInterval(countdown, 1000);
+
+    // Navegación secciones
+
+    // Mostrar cartel
+    document.getElementById("btn-cartel").addEventListener("click", function(e) {
+      e.preventDefault();
+      document.getElementById("contenido-principal").style.display = "none";
+      document.getElementById("beatland-section").style.display = "none";
+      document.getElementById("cartel-section").style.display = "block";
+      window.scrollTo(0, 0);
+    });
+
+    // Volver desde cartel
+    document.getElementById("volver-cartel").addEventListener("click", function () {
+      document.getElementById("cartel-section").style.display = "none";
+      document.getElementById("contenido-principal").style.display = "block";
+    });
+
+    // Mostrar merch
+    document.getElementById("btn-beatland").addEventListener("click", function(e) {
+      e.preventDefault();
+      document.getElementById("contenido-principal").style.display = "none";
+      document.getElementById("cartel-section").style.display = "none";
+      document.getElementById("beatland-section").style.display = "block";
+      window.scrollTo(0, 0);
+    });
+
+    // Volver desde beatland
+    document.getElementById("volver-beatland").addEventListener("click", function () {
+      document.getElementById("beatland-section").style.display = "none";
+      document.getElementById("contenido-principal").style.display = "block";
+    });
+  </script>
+</body>
+</html>
