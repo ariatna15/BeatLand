@@ -78,7 +78,7 @@
         <button class="comprar-btn">COMPRAR</button>
       </div>
       <div class="merch-item">
-        <img src="assets/merch2.jpeg" alt="Merch 2" />
+        <img src="assets/merch2.jpg" alt="Merch 2" />
         <button class="comprar-btn">COMPRAR</button>
       </div>
       <div class="merch-item">
@@ -97,9 +97,26 @@
     <div class="zona-oro">ZONA ORO</div>
     <div class="zona-general">ZONA GENERAL</div>
   </div>
+
+<!-- MERCH 4 (solo visible en Entradas) -->
+<section class="beatland-section" style="padding: 40px 20px; max-width: 1200px; margin: 0 auto; text-align: center;">
+  <div class="merch-item-4">
+    <div class="merch-content">
+      <!-- Imagen del Merch (a la izquierda) -->
+      <div class="merch-image-container">
+        <img src="assets/merch4.jpeg" alt="Merch 4" class="merch-image" />
+      </div>
+      
+      <!-- Texto a la derecha de la imagen -->
+      <div class="merch-text-container">
+        <h3>¡Compra tu Pulsera para BeatLand!</h3>
+        <p>Consigue tu pulsera exclusiva para el evento BeatLand. Con esta pulsera, tendrás acceso a zonas VIP y beneficios especiales durante el festival. ¡No te lo puedes perder! La pulsera es el pase que te permitirá disfrutar de todo el festival con ventajas que otros no tendrán. Con esta pulsera, puedes moverte por las zonas más exclusivas, acceder a conciertos VIP y mucho más. ¡Compra ahora y asegura tu lugar!</p>
+        <button class="comprar-btn">COMPRAR</button>
+      </div>
+    </div>
+  </div>
 </section>
 
-  
 
   <!-- SCRIPT CONTADOR Y NAVEGACIÓN -->
   <script>
@@ -129,61 +146,61 @@
     setInterval(countdown, 1000);
 
     function ocultarSecciones() {
-      document.getElementById("contenido-principal").style.display = "none";
-      document.getElementById("cartel-section").style.display = "none";
-      document.getElementById("beatland-section").style.display = "none";
-    }
+  document.getElementById("contenido-principal").style.display = "none";
+  document.getElementById("cartel-section").style.display = "none";
+  document.getElementById("beatland-section").style.display = "none";
+  document.getElementById("entradas-section").style.display = "none"; // Hacemos que también se oculte cuando cambiemos de sección.
+  document.querySelector('.merch-item-4').style.display = "none"; // Ocultamos el Merch 4 también.
+}
 
-    window.onload = () => {
-      ocultarSecciones();
-      document.getElementById("contenido-principal").style.display = "block";
-    };
+window.onload = () => {
+  ocultarSecciones();
+  document.getElementById("contenido-principal").style.display = "block";
+};
 
-    document.getElementById("btn-home").addEventListener("click", function(e) {
-      e.preventDefault();
-      ocultarSecciones();
-      document.getElementById("contenido-principal").style.display = "block";
-      window.scrollTo(0,0);
-    });
+// Mostrar la sección de Entradas y Merch 4
+document.querySelector('a[href="#entradas"]').addEventListener("click", function(e) {
+  e.preventDefault();
+  ocultarSecciones();
+  document.getElementById("entradas-section").style.display = "block";
+  document.querySelector('.merch-item-4').style.display = "block"; // Mostrar Merch 4 cuando entres en Entradas
+  window.scrollTo(0, 0);
+});
 
-    document.getElementById("btn-cartel").addEventListener("click", function(e) {
-      e.preventDefault();
-      ocultarSecciones();
-      document.getElementById("cartel-section").style.display = "block";
-      window.scrollTo(0, 0);
-    });
+// Otros botones que cambian de secciones
+document.getElementById("btn-home").addEventListener("click", function(e) {
+  e.preventDefault();
+  ocultarSecciones();
+  document.getElementById("contenido-principal").style.display = "block";
+  window.scrollTo(0, 0);
+});
 
-    document.getElementById("volver-cartel").addEventListener("click", function () {
-      ocultarSecciones();
-      document.getElementById("contenido-principal").style.display = "block";
-      window.scrollTo(0, 0);
-    });
+document.getElementById("btn-cartel").addEventListener("click", function(e) {
+  e.preventDefault();
+  ocultarSecciones();
+  document.getElementById("cartel-section").style.display = "block";
+  window.scrollTo(0, 0);
+});
 
-    document.getElementById("btn-beatland").addEventListener("click", function(e) {
-      e.preventDefault();
-      ocultarSecciones();
-      document.getElementById("beatland-section").style.display = "block";
-      window.scrollTo(0, 0);
-    });
+document.getElementById("volver-cartel").addEventListener("click", function () {
+  ocultarSecciones();
+  document.getElementById("contenido-principal").style.display = "block";
+  window.scrollTo(0, 0);
+});
 
-    document.getElementById("volver-beatland").addEventListener("click", function () {
-      ocultarSecciones();
-      document.getElementById("contenido-principal").style.display = "block";
-      window.scrollTo(0, 0);
-    });
+document.getElementById("btn-beatland").addEventListener("click", function(e) {
+  e.preventDefault();
+  ocultarSecciones();
+  document.getElementById("beatland-section").style.display = "block";
+  window.scrollTo(0, 0);
+});
 
-    document.querySelector('a[href="#entradas"]').addEventListener("click", function(e) {
-      e.preventDefault();
-      ocultarSecciones();
-      document.getElementById("entradas-section").style.display = "block";
-      window.scrollTo(0, 0);
-    });
+document.getElementById("volver-beatland").addEventListener("click", function () {
+  ocultarSecciones();
+  document.getElementById("contenido-principal").style.display = "block";
+  window.scrollTo(0, 0);
+});
 
-    document.getElementById("volver-entradas").addEventListener("click", function () {
-      ocultarSecciones();
-      document.getElementById("contenido-principal").style.display = "block";
-      window.scrollTo(0, 0);
-    });
 
 
   </script>
