@@ -285,3 +285,67 @@ header {
   color: white;
   border-color: white; 
 }
+
+/* Ocultar Merch 4 por defecto */
+.merch-item-4 {
+  display: none;
+}
+
+/* Alineación en fila (imagen a la izquierda, texto a la derecha) */
+.merch-item-4 .merch-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px; /* Espacio entre imagen y texto */
+  flex-wrap: wrap; /* Permite que se ajusten en pantallas pequeñas */
+}
+
+/* Imagen del Merch */
+.merch-item-4 .merch-image-container {
+  flex: 0 0 auto;
+  width: 30%; /* La imagen ocupa el 30% del espacio (más pequeña) */
+}
+
+.merch-item-4 .merch-image {
+  width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Texto a la derecha de la imagen */
+.merch-item-4 .merch-text-container {
+  flex: 1 1 65%; /* Ocupa el 65% del espacio disponible */
+  text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+.merch-item-4 .merch-text-container h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.merch-item-4 .merch-text-container p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.6; /* Hacemos el texto un poco más espacioso para mejor lectura */
+}
+
+.merch-item-4 .comprar-btn {
+  padding: 10px 20px;
+  background-color: #f90;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.merch-item-4 .comprar-btn:hover {
+  background-color: #e68000;
+}
+
+/* Mostrar Merch 4 solo en la sección de Entradas */
+#entradas-section .merch-item-4 {
+  display: block;
+}
