@@ -89,6 +89,18 @@
     <button id="volver-beatland" class="volver-btn">Volver</button>
   </section>
 
+<!-- SECCIÓN ENTRADAS -->
+<section id="entradas-section" class="zonas-festival" style="display: none;">
+  <h2>Zonas del Festival</h2>
+  <div class="mapa-festival">
+    <div class="escenario">ESCENARIO</div>
+    <div class="zona-oro">ZONA ORO</div>
+    <div class="zona-general">ZONA GENERAL</div>
+  </div>
+</section>
+
+  
+
   <!-- SCRIPT CONTADOR Y NAVEGACIÓN -->
   <script>
     const targetDate = new Date("June 27, 2025 00:00:00").getTime();
@@ -159,7 +171,21 @@
       document.getElementById("contenido-principal").style.display = "block";
       window.scrollTo(0, 0);
     });
+
+    document.querySelector('a[href="#entradas"]').addEventListener("click", function(e) {
+      e.preventDefault();
+      ocultarSecciones();
+      document.getElementById("entradas-section").style.display = "block";
+      window.scrollTo(0, 0);
+    });
+
+    document.getElementById("volver-entradas").addEventListener("click", function () {
+      ocultarSecciones();
+      document.getElementById("contenido-principal").style.display = "block";
+      window.scrollTo(0, 0);
+    });
+
+
   </script>
 </body>
 </html>
-
