@@ -226,3 +226,62 @@ header {
 .merch-item-1 img {
   max-height: 400px; 
 }
+
+.zonas-festival {
+  text-align: center;
+  padding: 2rem;
+  background-color: transparent; 
+}
+
+.zonas-festival h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: black; 
+  text-align: center;
+}
+
+.mapa-festival {
+  display: grid;
+  grid-template-rows: 80px 150px 200px;
+  gap: 12px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+
+  padding: 22px; 
+  background-color: white;
+
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.mapa-festival > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+
+  border: 2px solid white; 
+  border-radius: 8px;
+
+  color: white; 
+  box-sizing: border-box;
+}
+
+.escenario {
+  background-color: black;
+  color: white;
+}
+
+.zona-oro {
+  background-color: #FFD700;
+  color: black; 
+  border-color: white; 
+}
+
+.zona-general {
+  background-color: #0074D9;
+  color: white;
+  border-color: white; 
+}
