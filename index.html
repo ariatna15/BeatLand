@@ -98,7 +98,7 @@
     <div class="zona-general">GENERAL ZONE</div>
   </div>
 
-  <!-- Merch 4 SIN sección extra, solo un div con clase -->
+  <!-- Merch 4 -->
   <div class="merch-item-4" style="margin-top: 40px; background-color: #fffbe6; padding: 40px 20px; border-radius: 12px; max-width: 1200px; margin-left: auto; margin-right: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
     <div class="merch-content">
       <div class="merch-image-container">
@@ -145,6 +145,33 @@
   <p>Minors are not served alcoholic beverages or tobacco sales at the Festival, but they can access the festival grounds without the company of an adult. To do so, they must carry a photocopy of the parent's or guardian's ID, a photocopy and original of the minor's ID as well as the authorization and acceptance of responsibility form, completed and signed that they can download from this tab.</p>
 </section>
 
+<!-- SECCIÓN LINE UP -->
+<section id="lineup-section" style="display: none; padding: 40px 20px; max-width: 1200px; margin: 0 auto; text-align: center;">
+  <h2>LINE UP</h2>
+  <div class="lineup-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+    <img src="assets/1.png" alt="Artista 1" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/2.png" alt="Artista 2" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/3.png" alt="Artista 3" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/4.png" alt="Artista 4" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/5.png" alt="Artista 5" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/6.png" alt="Artista 6" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/7.png" alt="Artista 7" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/8.png" alt="Artista 8" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/9.png" alt="Artista 9" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/10.png" alt="Artista 10" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/11.png" alt="Artista 11" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/12.png" alt="Artista 12" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/13.png" alt="Artista 13" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/14.png" alt="Artista 14" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/15.png" alt="Artista 15" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/16.png" alt="Artista 16" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/17.png" alt="Artista 17" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/18.png" alt="Artista 18" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/19.png" alt="Artista 19" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/20.png" alt="Artista 20" style="width: 100%; border-radius: 8px;" />
+    <img src="assets/21.jpeg" alt="Artista 21" style="width: 100%; border-radius: 8px;" />
+  </div>
+</section>
 
 
 
@@ -182,6 +209,7 @@
     document.getElementById("entradas-section").style.display = "none"; 
     document.querySelector('.merch-item-4').style.display = "none"; 
     document.getElementById("info").style.display = "none";
+    document.getElementById("lineup-section").style.display = "none";
 }
 
 window.onload = () => {
@@ -234,6 +262,13 @@ document.querySelector('a[href="#info"]').addEventListener("click", function(e) 
   e.preventDefault();
   ocultarSecciones();
   document.getElementById("info").style.display = "block";
+  window.scrollTo(0, 0);
+});
+
+document.querySelector('a[href="#lineup"]').addEventListener("click", function(e) {
+  e.preventDefault();
+  ocultarSecciones();
+  document.getElementById("lineup-section").style.display = "block";
   window.scrollTo(0, 0);
 });
 
