@@ -163,6 +163,7 @@ header {
   margin: 0 auto;
   background-color: #fffbe6;
   color: #111;
+  margin-top: 40px;
 }
 
 .beatland-section h2 {
@@ -231,6 +232,7 @@ header {
   text-align: center;
   padding: 2rem;
   background-color: transparent; 
+  padding-bottom: 40px;
 }
 
 .zonas-festival h2 {
@@ -345,7 +347,54 @@ header {
   background-color: #e68000;
 }
 
-/* Mostrar Merch 4 solo en la sección de Entradas */
 #entradas-section .merch-item-4 {
   display: block;
+  margin-top: 40px; /* separación arriba */
+  background-color: #fffbe6;
+  padding: 40px 20px;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-section {
+  font-family: 'Montserrat', sans-serif;
+  color: #111;
+  line-height: 1.6;
+}
+
+.info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f90;
+  border-bottom: 3px solid #f90;
+  padding-bottom: 6px;
+}
+
+.info-section h3 {
+  font-size: 1.4rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.rules-list,
+.info-list {
+  list-style-type: disc;
+  margin-left: 1.2rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.rules-list li,
+.info-list li {
+  margin-bottom: 0.6rem;
+}
+
+.info-section p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.4rem;
 }
